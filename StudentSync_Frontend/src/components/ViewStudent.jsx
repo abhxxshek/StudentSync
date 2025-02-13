@@ -23,7 +23,7 @@ const ViewStudent = () => {
 
   function fetch_data(){
     axiosInstance
-      .get("http://localhost:7000/student/staff-students")
+      .get("/student/staff-students")
       .then((res) => {
         setCardData(res.data);
       })
@@ -41,7 +41,7 @@ const ViewStudent = () => {
 
   function delete_student(item) {
     axiosInstance
-      .delete(`http://localhost:7000/student/delete-student/${item._id}`)
+      .delete(`/student/delete-student/${item._id}`)
       .then((res) => {
         
         fetch_data()

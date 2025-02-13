@@ -25,7 +25,7 @@ const ViewMarksStudent = () => {
 
 
     useEffect(()=>{
-        axiosInstance.get(`http://localhost:7000/marks/display-marks/${studentId}`).then((res)=>{
+        axiosInstance.get(`/marks/display-marks/${studentId}`).then((res)=>{
             setMarks(res.data);
         }).catch((error)=>{
             alert("Cannot fetch mark details !");

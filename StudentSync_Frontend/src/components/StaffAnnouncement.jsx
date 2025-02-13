@@ -23,7 +23,7 @@ const StaffAnnouncement = () => {
 
   useEffect(() => {
     axiosInstance
-      .get("http://localhost:7000/staff/staff-announcement")
+      .get("/staff/staff-announcement")
       .then((res) => {
         setStaffData(res.data);
       })
@@ -48,7 +48,7 @@ const StaffAnnouncement = () => {
 
   function fetch_data() {
     axiosInstance
-      .get("http://localhost:7000/announcement/staff/display-announcements")
+      .get("/announcement/staff/display-announcements")
       .then((res) => {
         setAnnouncementData(res.data);
       })
@@ -67,7 +67,7 @@ const StaffAnnouncement = () => {
 
       axiosInstance
         .post(
-          "http://localhost:7000/announcement/add-announcements",
+          "/announcement/add-announcements",
           updatedAnnouncement
         )
         .then((res) => {
@@ -83,7 +83,7 @@ const StaffAnnouncement = () => {
   }
 
   function delete_announcement(item){
-    axiosInstance.delete(`http://localhost:7000/announcement/delete-announcement/${item._id}`).then((res)=>{
+    axiosInstance.delete(`/announcement/delete-announcement/${item._id}`).then((res)=>{
         alert(res.data.message);
         fetch_data()
     })

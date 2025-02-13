@@ -27,7 +27,7 @@ const Attendance = () => {
 
   useEffect(() => {
     axiosInstance
-      .get("http://localhost:7000/student/staff-students")
+      .get("/student/staff-students")
       .then((res) => {
         setStudentData(res.data);
       })
@@ -61,7 +61,7 @@ const Attendance = () => {
     );
 
     axiosInstance
-      .post("http://localhost:7000/attendance/mark-attendance", {
+      .post("/attendance/mark-attendance", {
         attendance: attendanceData,
       })
       .then((res) => {
